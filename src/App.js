@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 import Button from "./components/UI/Button/Button";
 import DemoOutput from "./components/Demo/DemoOutput";
@@ -10,11 +10,11 @@ function App() {
 
   console.log("App Running!"); // It runs everytime the component is re-evaluated
 
-  const toggleParagraphHandler = () => {
+  const toggleParagraphHandler = useCallback(() => {
     setShowParagraph((prevShowParagraph) => {
       return !prevShowParagraph;
     });
-  };
+  }, []);
 
   return (
     <div className="app">
