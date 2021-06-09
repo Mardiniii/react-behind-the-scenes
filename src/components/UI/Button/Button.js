@@ -16,5 +16,7 @@ const Button = (props) => {
     </button>
   );
 };
-
-export default Button;
+// This is not going to work because the only prop this component
+// gets is a function that is a new object everytime the
+// component is re-evaluated.
+export default React.memo(Button);
